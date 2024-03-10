@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub Repo](https://github.com/kemenyfa-szu/frontendmentor-019-signup-form)
-- Live Site URL: [GitHub Pages](https://kemenyfa-szu/.github.io/frontendmentor-019-signup-form)
+- Live Site URL: [GitHub Pages](https://kemenyfa-szu.github.io/frontendmentor-019-signup-form)
 
 ## My process
 
