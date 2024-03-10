@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('./font/Poppins/Poppins-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./font/Poppins/Poppins-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./font/Poppins/Poppins-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./font/Poppins/Poppins-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('./font/Poppins/Poppins-MediumItalic.ttf');
+    font-style: italic;
+}
+
+:root {
+    /* Primary */
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+
+    /* Accent */
+    --light-red: hsl(0, 100%, 80%);
+    --bright-red: hsl(0, 100%, 86%);
+    --blue: hsl(248, 32%, 49%);
+    --light-green: hsl(154, 59%, 57%);
+    --bright-green: hsl(154, 59%, 63%);
+
+    /* Neutral */
+    --dark-blue: hsl(249, 10%, 26%);
+    --grayish-blue: hsl(246, 25%, 77%);
+    --green-shadow: hsl(154, 59%, 46%);
+
+    /* Font */
+    --font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-family);
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--red);
+    background-image: url('./images/bg-intro-mobile.png');
+    color: white;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: clamp(1.75rem, calc(1rem + 3vw), 3rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+.motivator {
+    margin-bottom: 3rem;
+}
+
+.motivator p {
+    line-height: 1.75rem;
+}
+
+p.offer {
+    background-color: var(--blue);
+    padding: 1em 3em;
+    margin-bottom: 1.5rem;
+}
+
+.card-like {
+    border-radius: 10px;
+    box-shadow: 0px 7px 0px hsla(0, 0%, 0%, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 1.5vw, 1.25rem);
+    background-color: white;
+    padding: clamp(1rem, 2vw, 2rem);
+}
+
+.input-container {
+    position: relative;
+}
+
+input.text-input {
+    width: 100%;
+    font-family: var(--font-family);
+    color: var(--dark-blue);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    border: 1px solid var(--grayish-blue);
+    border-radius: 5px;
+}
+
+input.text-input::placeholder {
+    color: var(--grayish-blue);
+}
+
+input.text-input:focus {
+    border: none;
+    outline: 1px solid var(--dark-blue);
+}
+
+
+button[type=submit] {
+    background-color: var(--green);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 0px var(--green-shadow);
+    cursor: pointer;
+}
+
+button[type=submit]:hover {
+    background-color: var(--light-green);
+    box-shadow: 0px 4px 0px var(--green);
+}
+button[type=submit]:active {
+    background-color: var(--bright-green);
+    box-shadow: 0px 4px 0px var(--light-green);
+}
+
+p.legal {
+    font-size: 0.7rem;
+    color: var(--grayish-blue);
+    padding-inline: 2em;
+    line-height: 2em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--red);
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--light-red);
+}
+
+a:active {
+    color: var(--bright-red);
+}
+
+.error-text {
+    display: none;
+    font-size: 0.7rem;
+    color: var(--red);
+    text-align: right;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 0.5em;
+}
+
+.error-text::before {
+    position: absolute;
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 1.125rem;
+    right: 1.5rem;
+    background-image: url('./images/icon-error.svg');
+}
+
+input.text-input.error {
+    color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.error-text.error {
+    display: block;
+}
+
+#success {
+    font-size: min(10vw, 5rem);
+    display: none;
+}
+
+#success.success {
+    display:block;
+}
+#freeTrial.success {
+    display: none;
+}
+
+@media screen and (max-width: 639px){
+    main {
+        padding: 10vh 7vw;
+    }
+}
+@media screen and (min-width: 640px){
+    main {
+        flex-direction: row;
+    }
+    #freeTrial {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        max-width: 80vw;
+        gap: clamp(2rem, 3vw, 4rem);
+    }
+
+    #freeTrial > * {
+        align-self: center;
+    }
+
+    .motivator {
+        text-align: left;
+    }
+}
+
+.attribution {
+    display: none;
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
